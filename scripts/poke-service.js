@@ -1,18 +1,18 @@
 export const PokeService = {
     get url(){
-        return "//dev.treinaweb.com.br/pokeapi";
+        return "https://dev.treinaweb.com.br/pokeapi/pokedex/1";
     },
     list: [],
     listAll(){
         if(this.list.length){
             return Promise.resolve(this.list);
         }else{
-            return fetch(`${this.url}/pokedex/1`)
+            return fetch(this.url)
                 .then(response => response.json())
                 .then(response => response.pokemon)
                 .then(pkmList => {
-                    pkmList.map(pokemon => {
-                        var number = getNumberFromURL(pokemon.resource_uri);
+                    return pkmList.map(pokemon => {
+                        var number = this.getNumberFromURL(pokemon.resource_uri);
                         return Object.assign({}, pokemon, {number});
                     })
                     .filter(pokemon => pokemon.number < 1000)

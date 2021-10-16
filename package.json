@@ -12,7 +12,7 @@
     "webpack": "^1.12.6"
   },
   "scripts": {
-    "build": "./node_modules/.bin/webpack --config webpack.config.js --watch"
+    "build": "webpack --config webpack.config.js --watch"
   },
   "repository": {
     "type": "git",
