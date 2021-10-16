@@ -1,6 +1,6 @@
-export const pokeService = {
+export const PokeService = {
     get url(){
-        return "//pokeapi.co/api/v2";
+        return "//dev.treinaweb.com.br/pokeapi";
     },
     list: [],
     listAll(){

@@ -1,4 +1,4 @@
-export const listService = {
+export const ListService = {
     createList(pkmList){
         return pkmList.map(pokemon => {
             return `<li class="poke-list-item">
